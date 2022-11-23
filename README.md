@@ -11,7 +11,7 @@ O (<a href="https://hub.docker.com/">DockerHub</a>) é uma espécie de github s�
 Para baixar a imagem, deve-se executar o seguinte comando no terminal:
 
 ```
-$ docker pull docker pull ramonmedeiro/ds-image
+$ docker pull ramonmedeiro/ds-image
 ```
 
 Aguardar que a imagem será baixada. São cerca de 3.8 GB.
@@ -44,10 +44,11 @@ Quem desejar utilizar o docker como criador de ambientes para DS, fiquem à vont
 $ git clone https://github.com/ramoonmedeiro/env-datascience-docker.git
 ```
 
-Ao ter alterado o arquivo Dockerfile com os pacotes de seu desejo, basta criar a imagem localmente:
+Ao ter alterado o arquivo Dockerfile com os pacotes de seu desejo, basta criar a imagem e executar o container localmente:
 
 ```
-$ docker build -t <nome-da-imagem>
+$ docker build -t <nome-da-imagem-escolhida>
+$ docker container run -it --rm <nome-da-imagem-escolhida>
 ```
 
 # Considerações Finais
