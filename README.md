@@ -41,7 +41,17 @@ Pacotes DS: Python3, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-Learn, Te
 Quem desejar utilizar o docker como criador de ambientes para DS, fiquem à vontade para colocar mais pacotes interessantes ou pacotes da sua necessidade alterando o arquivo Dockerfile deste repositório. Para isso, é só baixar o Dockerfile diretamente ou clonar este repositório:
 
 ```
-$ git clone 
+$ git clone https://github.com/ramoonmedeiro/env-datascience-docker.git
 ```
 
+Ao ter alterado o arquivo Dockerfile com os pacotes de seu desejo, basta criar a imagem localmente:
 
+```
+$ docker build -t <nome-da-imagem>
+```
+
+# Considerações Finais
+
+Para este repositório, optei por não instalar o Anaconda ou Miniconda, pois os mesmos são bem grandes em memória, mas instalar um deles é uma boa prática, já que diversos programas já vem com eles ou podem ser instalados facilmente com o conda.
+
+Para alterar o arquivo Dockerfile, é necessário ter um conhecimento de comandos bash. Há diversos tutoriais na internet muito bons explciando os principais comandos em bash. Pra quem já tem uma certa familiaridade e nunca mexeu com docker, divirta-se na execução dos comandos.
