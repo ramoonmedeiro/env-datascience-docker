@@ -40,5 +40,3 @@ RUN mkdir ds
 ENV HOME =/ds
 ENV SHELL=/bin/bash
 WORKDIR /ds
-
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
