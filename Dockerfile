@@ -2,8 +2,11 @@ FROM ubuntu:20.04
 
 
 RUN echo "**** Installing main packages ****" && \
-    apt-get update && apt-get install -y \
-    	tzdata \
+    apt-get update && apt-get install -y tzdata
+
+ENV TZ=America/Sao_Paulo
+
+RUN apt-get update && apt-get install -y \
     	wget \
     	build-essential \
     	byobu \
@@ -16,11 +19,20 @@ RUN echo "**** Installing main packages ****" && \
     	python3-setuptools \
     	python3-virtualenv \
     	unzip
+ 
+RUN echo " *** Baixando pacotes para DataScience ****" && \
+	echo "pandas" >> requirements.txt && \
+	echo "numpy" >> requirements.txt && \
+    echo "matplotlib" >> requirements.txt && \
+    echo "seaborn" >> requirements.txt && \
+    echo "scipy" >> requirements.txt && \
+    echo "scikit-learn" >> requirements.txt && \
+    echo "tensorflow" >> requirements.txt && \
+    echo "jupyter" >> requirements.txt
 
-RUN echo "**** Instaling Miniconda ****" && \
-	curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh && \
-	/bin/bash Miniconda3-latest-Linux-x86_64.sh && \
-	export PATH=$PATH:/home/miniconda3/bin
+
+
+RUN pip3 install -r requirements.txt
 
 EXPOSE 8888
 
