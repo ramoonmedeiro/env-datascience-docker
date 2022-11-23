@@ -6,7 +6,42 @@ Neste repositório eu apresento uma imagem criada por mim que contém alguns dos
 
 # Docker Pull e DockerHub
 
-O DockerHub pode ser 
+O (<a href="https://hub.docker.com/">DockerHub</a>) é uma espécie de github só que para o armazenamento e gereciamento de imagens docker. Meu perfil no DockerHub pode ser encontrado <a href="https://hub.docker.com/u/ramonmedeiro">aqui</a>. 
 
+Para baixar a imagem, deve-se executar o seguinte comando no terminal:
+
+```
+$ docker pull docker pull ramonmedeiro/ds-image
+```
+
+Aguardar que a imagem será baixada. São cerca de 3.8 GB.
+
+# Criar Conteiner
+
+Para criar um conteiner com a imagem baixada, basta executar o seguinte comando:
+
+```
+$ docker container run -it --rm ramonmedeiro/ds-image
+```
+Após isso, o seu terminal terá acesso ao container via bash.
+
+# Especificações
+
+O Dockerfile da imagem criada pode ser encotrada acima, onde possuem todas as especificações do container quando o mesmo for criado.
+
+```
+* Especificações *
+
+SO: Ubuntu 20.04 LTS
+Pacotes DS: Python3, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-Learn, Tensorflow e Jupyter.
+```
+
+# Criar a Própria Imagem
+
+Quem desejar utilizar o docker como criador de ambientes para DS, fiquem à vontade para colocar mais pacotes interessantes ou pacotes da sua necessidade alterando o arquivo Dockerfile deste repositório. Para isso, é só baixar o Dockerfile diretamente ou clonar este repositório:
+
+```
+$ git clone 
+```
 
 
